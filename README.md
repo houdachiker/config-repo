@@ -23,11 +23,6 @@ Le dépôt distant `https://github.com/houdachiker/config-repo.git` contient act
 - chemin de recherche : `config-repo` ;
 - port du Config Server : `8888`.
 
-**Attention :** il y a un décalage entre le dépôt distant et le Config Server. Celui-ci cherche les fichiers dans un sous-dossier `config-repo/`, alors qu'ils sont actuellement à la racine du dépôt. Pour servir la structure actuelle, régler `spring.cloud.config.server.git.search-paths` à `.` (ou supprimer cette propriété). L'autre option est de déplacer les fichiers `.properties` dans un sous-dossier `config-repo/`.
-
-Le README du projet Billing mentionne également une autre URL pour le dépôt de configuration (`billing-microservices.git`). Harmoniser cette documentation avec l'URL réellement utilisée par le Config Server.
-
-Une fois le chemin corrigé, les configurations peuvent être vérifiées, par exemple à `http://localhost:8888/service-clients/default`.
 
 ## Modifier une configuration
 
