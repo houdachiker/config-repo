@@ -38,11 +38,3 @@ Une fois le chemin corrigé, les configurations peuvent être vérifiées, par e
 5. Redémarrer le service concerné pour qu'il recharge sa configuration, sauf si un mécanisme de rafraîchissement a été configuré explicitement.
 
 Le `refresh-rate=60` du Config Server régit la fréquence de mise à jour de son clone Git ; il ne garantit pas, à lui seul, le rechargement à chaud d'une application déjà démarrée.
-
-## Secrets et securite
-
-- Ne jamais commiter de mot de passe, jeton, clé privée ou certificat privé.
-- Référencer les secrets par variables d'environnement, par exemple `${DB_CLIENTS_PASSWORD}`, puis les fournir hors du dépôt.
-- Garder dans Git les valeurs non sensibles partagées par l'équipe, ainsi que des exemples avec des valeurs fictives.
-- Les valeurs RabbitMQ `guest/guest` présentes dans certaines configurations sont réservées au développement local. Utiliser des identifiants dédiés et injectés hors du dépôt dans tout environnement partagé ou de production.
-- Ne pas ignorer tout `config-repo/` : ces fichiers sont nécessaires au Config Server. Seuls les fichiers locaux contenant de vrais secrets doivent être exclus du suivi Git.
